@@ -7,5 +7,13 @@
     <string name="tipo_user">¿Qué eres?</string>
     <string name="inversionista">Inversionista</string>
     <string name="emprendedor">Emprendedor</string>
+    <string name="startup_reg">Registro de startup</string>
+    <string name="nombrestart">Nombre de tu startup</string>
+    <string name="descripstart">Descripción de tu startup (procura ser muy extenso porque en esto se basarán los inversionistas para decidir si te invierten o no)</string>
+    <string name="girostart">Giro o área de tu startup</string>
+    <string name="visionstart">¿Cuál es tu visión como emprendedor?</string>
+    <string name="cantidadstart">¿Cuánto necesitas? (Ingresa la cantidad)</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
 
 </resources>

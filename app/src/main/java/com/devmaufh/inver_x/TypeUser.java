@@ -1,7 +1,10 @@
 package com.devmaufh.inver_x;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +14,22 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TypeUser extends AppCompatActivity {
     SharedPreferences prefs;
     private Switch swType;
     private ImageView img_type;
     private Button btn_next;
-    String type="";
+    private FirebaseFirestore db;
+
+    private  String type="inversionistas";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +50,7 @@ public class TypeUser extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Show main
-
+                saveOnPreferences(type);
             }
         });
     }
@@ -49,10 +59,18 @@ public class TypeUser extends AppCompatActivity {
         img_type=(ImageView)findViewById(R.id.img_type);
         swType=(Switch)findViewById(R.id.tipo_user);
         btn_next=(Button)findViewById(R.id.tippo_btn_next);
+        db=FirebaseFirestore.getInstance();
     }
     private void saveOnPreferences(String type){
         SharedPreferences.Editor editor=prefs.edit();
         editor.putString("type",type);
         editor.apply();
+        if(prefs.getString("type","No type    ").equals("inversionistas"))
+            launchNext(new Intent(this,Home_inversionista.class));
+        else
+            launchNext(new Intent(this,startup_reg.class));
+    }
+    private void launchNext(Intent intent){
+        startActivity(intent);
     }
 }
