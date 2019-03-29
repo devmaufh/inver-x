@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "129010267304",
+    "firebase_url": "https://inevrtics.firebaseio.com",
+    "project_id": "inevrtics",
+    "storage_bucket": "inevrtics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129010267304:android:b6e943ede3e5fe7c",
+        "android_client_info": {
+          "package_name": "com.devmaufh.inver_x"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129010267304-llh809ubd3j7142lnkjdjded4mavlhsc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devmaufh.inver_x",
+            "certificate_hash": "ff7c8b09befd8faf3c943a54775dbdd607cc9749"
+          }
+        },
+        {
+          "client_id": "129010267304-vak608u4du94fo18d6365faunb94prb3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhleqxtVgz1pkRhwJhCTYJBi7LNLqbhhw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129010267304-vak608u4du94fo18d6365faunb94prb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

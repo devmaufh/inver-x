@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Invert-x</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="inicia_ses">Iniciar sesión</string>
+    <string name="reg">Registrarse</string>
+    <string name="tipo_user">¿Qué eres?</string>
+    <string name="inversionista">Inversionista</string>
+    <string name="emprendedor">Emprendedor</string>
+
+</resources>
