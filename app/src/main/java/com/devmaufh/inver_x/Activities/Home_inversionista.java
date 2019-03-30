@@ -1,4 +1,4 @@
-package com.devmaufh.inver_x;
+package com.devmaufh.inver_x.Activities;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -7,6 +7,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.devmaufh.inver_x.Fragments.InverCatalog;
+import com.devmaufh.inver_x.Fragments.InverFavoritos;
+import com.devmaufh.inver_x.Fragments.InverPerfil;
+import com.devmaufh.inver_x.R;
 
 public class Home_inversionista extends AppCompatActivity {
     private BottomNavigationView bottomNavigation;

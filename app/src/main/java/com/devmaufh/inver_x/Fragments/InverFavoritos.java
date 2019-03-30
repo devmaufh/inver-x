@@ -1,4 +1,4 @@
-package com.devmaufh.inver_x;
+package com.devmaufh.inver_x.Fragments;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.devmaufh.inver_x.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InverPerfil extends Fragment {
+public class InverFavoritos extends Fragment {
 
 
-    public InverPerfil() {
+    public InverFavoritos() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,10 @@ public class InverPerfil extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inver_perfil, container, false);
+        View view=inflater.inflate(R.layout.fragment_inver_favoritos, container, false);
+
+
+        return view;
     }
 
 }

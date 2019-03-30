@@ -1,10 +1,9 @@
-package com.devmaufh.inver_x;
+package com.devmaufh.inver_x.Activities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.devmaufh.inver_x.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -86,7 +86,7 @@ public class TypeUser extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        launchNext(new Intent(getApplicationContext(),Home_inversionista.class));
+                        launchNext(new Intent(getApplicationContext(), Home_inversionista.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
