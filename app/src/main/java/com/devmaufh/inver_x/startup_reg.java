@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Text;
@@ -64,21 +65,42 @@ public class startup_reg extends AppCompatActivity {
             Toast.makeText(this, "Ingresa un nombre válido", Toast.LENGTH_SHORT).show();
 
         if(flag){
-            db.collection("startups").document(prefs.getString("id","null")).set(get_hash(nom,gi,de,vi,c))
-                    .addOnSuccessListener(new OnSuccessListener() {
+            db.collection("startups").add(get_hash(nom,gi,de,vi,c))
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
-                        public void onSuccess(Object o) {
-                            Toast.makeText(startup_reg.this, "Startup correcta", Toast.LENGTH_SHORT).show();
+                        public void onSuccess(DocumentReference documentReference) {
+                            addStartupToUser(documentReference.getId());
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(startup_reg.this, "Registro incorrecto intente más tarde", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(startup_reg.this, "Error al agregar startup", Toast.LENGTH_SHORT).show();
                         }
                     });
         }
 
+    }
+
+    private void addStartupToUser(String id) {
+        Map<String,Object> hash_id= new HashMap<>();
+        hash_id.put("id_startup",id);
+        db.collection("users_startup")
+                .document(prefs.getString("id",""))
+                .collection("startup_id")
+                .document(id).set(hash_id)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(startup_reg.this, "COOOOOL Sub", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(startup_reg.this, "NOOO", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void bindUI(){

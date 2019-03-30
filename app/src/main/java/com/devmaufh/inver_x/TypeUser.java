@@ -65,12 +65,57 @@ public class TypeUser extends AppCompatActivity {
         SharedPreferences.Editor editor=prefs.edit();
         editor.putString("type",type);
         editor.apply();
-        if(prefs.getString("type","No type    ").equals("inversionistas"))
-            launchNext(new Intent(this,Home_inversionista.class));
-        else
-            launchNext(new Intent(this,startup_reg.class));
+        if(prefs.getString("type","No type    ").equals("inversionistas")) {
+            registraInversionista();
+        }
+        else {
+            registraUserStartup();
+        }
     }
     private void launchNext(Intent intent){
         startActivity(intent);
+    }
+    private void registraInversionista(){
+        String id=prefs.getString("id","null");
+        String name=prefs.getString("name","null");
+        String email=prefs.getString("email","null");
+        Map<String, Object> usr=new HashMap<>();
+        usr.put("nombre",name);
+        usr.put("email",email);
+        db.collection("inversionista").document(id).set(usr)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        launchNext(new Intent(getApplicationContext(),Home_inversionista.class));
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(TypeUser.this, "Error al registrar, intenta más tarde", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+    private void registraUserStartup(){
+        String id=prefs.getString("id","null");
+        String name=prefs.getString("name","null");
+        String email=prefs.getString("email","null");
+        Map<String,Object> usr= new HashMap<>();
+        usr.put("nombre",name);
+        usr.put("email",email);
+        db.collection("users_startup").document(id).set(usr)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(TypeUser.this, "Cool", Toast.LENGTH_SHORT).show();
+                        launchNext(new Intent(getApplicationContext(), startup_reg.class));
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(TypeUser.this, "Error al registrar usuario, intenta más tarde", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

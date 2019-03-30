@@ -93,19 +93,6 @@ public class MainActivity extends AppCompatActivity {
             Map<String,Object> user=new HashMap<>();
             user.put("email",email);
             user.put("name",name);
-            db.collection("users").document(id).set(user)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(MainActivity.this, "Registrado en firebase", Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(MainActivity.this, "Error al almacenar: "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
             launch_main();
             Log.w("AVEEEEEEEER", ""+account.getDisplayName()+"\n"+account.getEmail());
 
