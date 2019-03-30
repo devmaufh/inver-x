@@ -81,7 +81,6 @@ public class startup_reg extends AppCompatActivity {
         }
 
     }
-
     private void addStartupToUser(String id) {
         Map<String,Object> hash_id= new HashMap<>();
         hash_id.put("id_startup",id);
