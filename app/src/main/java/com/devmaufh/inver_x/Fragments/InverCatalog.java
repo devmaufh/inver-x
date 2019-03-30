@@ -2,6 +2,7 @@ package com.devmaufh.inver_x.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.devmaufh.inver_x.Activities.DetailStartup;
 import com.devmaufh.inver_x.Adapters.SwipAdapter;
 import com.devmaufh.inver_x.Adapters.SwipteAdapter2;
 import com.devmaufh.inver_x.Models.CardItem;
@@ -102,6 +104,9 @@ public class InverCatalog extends Fragment implements SwipeStack.SwipeStackListe
         CardItem cardItem=(CardItem) adapter.getItem(position);
         Toast.makeText(getContext(), "ID: "+cardItem.getId(), Toast.LENGTH_SHORT).show();
         addStartupToFavorites(cardItem.getId());
+        Intent intent= new Intent(getContext(),DetailStartup.class);
+        intent.putExtra("startup",cardItem.getId().toString());
+        startActivity(intent);
     }
 
     @Override

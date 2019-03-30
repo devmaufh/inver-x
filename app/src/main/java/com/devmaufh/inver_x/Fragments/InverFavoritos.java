@@ -2,6 +2,7 @@ package com.devmaufh.inver_x.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.devmaufh.inver_x.Activities.DetailStartup;
 import com.devmaufh.inver_x.Adapters.RecyclerStartupAdapter;
 import com.devmaufh.inver_x.Models.CardItem;
 import com.devmaufh.inver_x.R;
@@ -74,7 +76,9 @@ public class InverFavoritos extends Fragment {
         rvAdapter= new RecyclerStartupAdapter( itemList, R.layout.card_favoritos, new RecyclerStartupAdapter.ClickListener() {
             @Override
             public void clickListener(CardItem item, int position) {
-                //Do something
+                Intent intent= new Intent(getContext(), DetailStartup.class);
+                intent.putExtra("startup",item.getId());
+                startActivity(intent);
             }
         });
         rv_favs.setLayoutManager(layoutManager);
@@ -82,14 +86,10 @@ public class InverFavoritos extends Fragment {
     }
     private List<CardItem> testArray()   {
         ArrayList<CardItem> list= new ArrayList<>();
-        list.add(new CardItem("1","Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\" 1","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
-        list.add(new CardItem("1","Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\" 1","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
-        list.add(new CardItem("1","Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\" 1","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
-        list.add(new CardItem("1","Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\" 1","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
-        list.add(new CardItem("1","Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\" 1","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
-        list.add(new CardItem("1","Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\" 1","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
-        list.add(new CardItem("1","Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\" 1","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
-        list.add(new CardItem("1","Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\" 1","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
+        list.add(new CardItem("2hcMNHrNeKWVv8QtuCnw\n", "Test", "","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
+        list.add(new CardItem("2hcMNHrNeKWVv8QtuCnw\n", "Test", "","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
+        list.add(new CardItem("2hcMNHrNeKWVv8QtuCnw\n", "Test", "","Tecnol2ogía","Vision","https://firebasestorage.googleapis.com/v0/b/inevrtics.appspot.com/o/startups%2Fpanelessolares.jpg?alt=media&token=1ce51965-9b3d-4992-82ac-8423245b2848"));
+
 
         return list;
     }
