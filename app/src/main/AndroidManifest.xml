@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home_inversionista"></activity>
-        <activity android:name=".startup_reg" />
-        <activity android:name=".TypeUser" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.Home_inversionista"></activity>
+        <activity android:name=".Activities.startup_reg" />
+        <activity android:name=".Activities.TypeUser" />
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

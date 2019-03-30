@@ -1,4 +1,4 @@
-package com.devmaufh.inver_x;
+package com.devmaufh.inver_x.Activities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,12 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.devmaufh.inver_x.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
