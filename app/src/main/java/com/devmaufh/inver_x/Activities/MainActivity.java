@@ -64,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
         if(account!=null) {
             Toast.makeText(this, "Ya estás logead", Toast.LENGTH_SHORT).show();
             saveOnPreferences(account.getId(),account.getDisplayName(),account.getEmail());
+            if(prefs.getString("type","no").equals("inversionistas"))
+            {
+
+            }
             launch_main();
 
         }else

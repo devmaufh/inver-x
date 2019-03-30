@@ -65,7 +65,7 @@ public class TypeUser extends AppCompatActivity {
         SharedPreferences.Editor editor=prefs.edit();
         editor.putString("type",type);
         editor.apply();
-        if(prefs.getString("type","No type    ").equals("inversionistas")) {
+        if(prefs.getString("type","No ").equals("inversionistas")) {
             registraInversionista();
         }
         else {
