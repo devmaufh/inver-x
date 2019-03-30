@@ -15,5 +15,11 @@
     <string name="cantidadstart">¿Cuánto necesitas? (Ingresa la cantidad)</string>
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="catalogo">Catalogo</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="perfil">Mi perfil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
