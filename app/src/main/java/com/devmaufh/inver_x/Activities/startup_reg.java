@@ -100,7 +100,6 @@ public class startup_reg extends AppCompatActivity {
                     }
                 });
     }
-
     private void bindUI(){
         db=FirebaseFirestore.getInstance();
         prefs=getSharedPreferences("preferences", Context.MODE_PRIVATE);

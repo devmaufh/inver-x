@@ -1,12 +1,14 @@
 package com.devmaufh.inver_x.Adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.devmaufh.inver_x.Models.CardItem;
 import com.devmaufh.inver_x.R;
@@ -45,10 +47,9 @@ public class SwipteAdapter2 extends BaseAdapter {
         ImageView img=convertView.findViewById(R.id.cardcatalog_img);
         TextView name=convertView.findViewById(R.id.cardcatalog_title);
         TextView ubic=convertView.findViewById(R.id.cardcatalog_ubic);
-        Picasso.with(convertView.getContext()).load(R.drawable.emprendedor).into(img);
+        Picasso.with(convertView.getContext()).load(item.getUrl()).into(img);
         name.setText(item.getNombre());
         ubic.setText(item.getGiro());
-
         return  convertView;
     }
 }
